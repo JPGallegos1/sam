@@ -35,7 +35,7 @@ export default function FAQ() {
 
     return (
         <section className='py-14'>
-            <div className="max-w-screen-xl mx-auto ">
+            <div className="max-w-screen-xl mx-auto md:px-0 px-4">
                 <div className="max-w-lg">
                     <h3 className='mt-3 text-gray-800 text-3xl font-extrabold sm:text-4xl'>
                         {`Frequently asked questions`}
