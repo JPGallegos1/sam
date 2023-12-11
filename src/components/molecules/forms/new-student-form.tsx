@@ -3,12 +3,13 @@ import type { Student } from "@/types";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocalStorage } from "usehooks-ts";
-import router from "next/router";
+import { NextRouter, useRouter } from "next/router";
 
 import { StudentSchema, studentSchema } from "@/schema";
 
-export default function StudentForm() {
+export default function NewStudentForm() {
   const [students, setStudents] = useLocalStorage<Student[]>("students", []);
+  const router: NextRouter = useRouter();
 
   const {
     register,

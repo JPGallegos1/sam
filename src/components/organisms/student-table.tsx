@@ -36,7 +36,7 @@ export default function StudentTable() {
                     <td className="text-right px-6 whitespace-nowrap">
                       <Link
                         className="py-2 px-3 font-medium text-sky-600 hover:text-sky-500 duration-150 hover:bg-gray-50 rounded-lg"
-                        href="edit"
+                        href={`/students/edit?student=${student.id}`}
                       >
                         Edit
                       </Link>
