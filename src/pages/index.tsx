@@ -1,118 +1,119 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from "next/image";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
+import LandingTemplate from "@/components/templates/landing-template";
+
+export const faqsList = [
+  {
+    label: "Payment",
+    qas: [
+      {
+        q: "What are the accepted payment methods for accessing educational resources or services?",
+        a: "Our platform offers various convenient payment methods, including credit/debit cards, PayPal, bank transfers, and other secure online payment options. We aim to provide flexibility in payment to ensure easy access to our educational resources for students worldwide.",
+      },
+      {
+        q: "Are there any flexible payment plans available to assist students with limited budgets?",
+        a: "To accommodate diverse financial situations, we offer flexible payment plans tailored to meet the needs of students with budget constraints. These plans may include installment options or customizable payment schedules, empowering students to access quality education without financial stress.",
+      },
+      {
+        q: "Do you offer scholarships or financial aid options to support students' access to educational programs?",
+        a: "As part of our commitment to fostering accessible education, we provide scholarship opportunities or financial aid programs for eligible students. These initiatives aim to support deserving individuals in pursuing their academic goals and gaining access to our educational offerings.",
+      },
+    ],
+  },
+  {
+    label: "Account",
+    qas: [
+      {
+        q: "How can I create a student account to access educational materials or coursework?",
+        a: "Creating a student account with us is a simple and streamlined process. By visiting our platform's registration page, students can sign up easily by providing basic information. Once registered, students gain access to a wealth of educational materials and coursework available on our platform.",
+      },
+      {
+        q: "Can students easily update their educational preferences or course selections within their account?",
+        a: "Our user-friendly interface allows students to conveniently manage their educational preferences and course selections within their account settings. Whether adjusting course enrollments, updating personal details, or modifying learning paths, students have the flexibility to tailor their educational journey to suit their evolving needs.",
+      },
+    ],
+  },
+];
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <LandingTemplate>
+      <section className="md:py-28 py-14">
+        <div className="max-w-screen-xl mx-auto md:px-0 px-4 text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex ">
+          <div className="flex-none space-y-5 sm:max-w-lg md:px-0 lg:max-w-xl">
+            <h1 className="text-sm text-sky-600 font-medium">
+              {`Facilitating over 1200 academic achievements.`}
+            </h1>
+            <h2 className="text-4xl text-gray-800 font-extrabold md:text-5xl">
+              {`We assist international students in advancing their education`}
+            </h2>
+            <p>
+              {`Catering to the diverse needs of international students, our dedicated services are designed to provide comprehensive support and guidance throughout their educational journey. Whether navigating through admission processes, offering assistance in acclimatizing to new academic environments, or providing tailored resources for academic success, we are committed to ensuring that each student receives the necessary tools and support to excel in their educational pursuits. Our goal is to empower and enrich the educational experience of foreign students, fostering an environment where learning thrives and aspirations are realized.`}
+            </p>
+            <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+              <Link
+                className="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
+                href="/students"
+              >
+                {`Manage students`}
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+          <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              alt="students"
+              className=" md:rounded-tl-[108px]"
+              height={800}
+              src="/students.avif"
+              width={600}
             />
-          </a>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </section>
+      <section className="py-14">
+        <div className="max-w-screen-xl mx-auto md:px-0 px-4">
+          <div className="max-w-lg">
+            <h3 className="mt-3 text-gray-800 text-3xl font-extrabold sm:text-4xl">
+              {`Frequently asked questions`}
+            </h3>
+          </div>
+          <div className="mt-12 divide-y sm:mt-20">
+            {faqsList.map((list, idx) => (
+              <div key={idx} className="py-5 gap-x-12 first:pt-0 sm:flex">
+                <div className="max-w-sm pt-8 pb-6 sm:pt-0 lg:flex-grow">
+                  <h4 className="text-gray-500 font-semibold">{list.label}</h4>
+                </div>
+                <ul className="flex-1 space-y-6 sm:last:pb-6 sm:space-y-8">
+                  {list.qas.map((item, idx) => (
+                    <li key={idx}>
+                      <summary className="flex items-center justify-between font-semibold text-gray-700">
+                        {item.q}
+                      </summary>
+                      <p
+                        dangerouslySetInnerHTML={{ __html: item.a }}
+                        className="mt-3 text-gray-600 leading-relaxed"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </LandingTemplate>
+  );
 }
