@@ -1,15 +1,5 @@
-import FAQ from "../FAQ";
-import Footer from "../footer";
-import Header from "../header";
-import Hero from "../hero";
+import Layout from "../layout";
 
-export default function LandingTemplate() {
-  return (
-    <>
-      <Header />
-      <Hero />
-      <FAQ />
-      <Footer />
-    </>
-  );
+export default function LandingTemplate({ children }: { children: React.ReactNode }) {
+  return <Layout>{children}</Layout>;
 }
