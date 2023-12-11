@@ -1,7 +1,9 @@
-export default function StudentsPage(){
-    return (
-        <div>
-            <h1>hello</h1>
-        </div>
-    )
+import StudentsTemplate from "@/components/templates/students-template";
+
+export default function StudentsPage() {
+  return (
+    <>
+      <StudentsTemplate />
+    </>
+  );
 }

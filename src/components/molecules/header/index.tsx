@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import Logo from "./logo";
-import Menu from "./menu";
+import Logo from "../../atoms/logo";
+import Menu from "../../atoms/menu";
 
 export default function Header() {
   const [isMenuActive, setIsMenuActive] = useState(false);
